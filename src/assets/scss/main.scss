@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,500,700");
+
+html {
+  font-family: "Roboto";
+}
+.tmodal {
+  &.open {
+    & .tmodal_overlay {
+      z-index: 100;
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    & .tmodal_window {
+      z-index: 100;
+      opacity: 1;
+      transform: translateY(100px);
+    }
+  }
+  &.hide {
+    & .tmodal_overlay {
+      z-index: 100;
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    & .tmodal_window {
+      z-index: 100;
+      opacity: 1;
+      transform: translateY(-200px);
+    }
+  }
+  &_overlay {
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease-in;
+  }
+  &_window {
+    transform: translateY(-200px);
+    transition: transform 0.3s ease-in;
+    opacity: 0;
+    z-index: -1;
+    padding: 10px 0px;
+    border-radius: 5px;
+    margin: 0px auto;
+    width: 500px;
+    background-color: #fff;
+  }
+
+  &_header {
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_body {
+    border-top: #000000 1px solid;
+    padding: 10px 5px;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+  }
+
+  &_footer {
+    border-top: solid 1px #000000;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 5px;
+  }
+}
+
+.btn {
+  margin-right: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.close {
+  cursor: pointer;
+}
+
+.catalog {
+  max-width: 1280px;
+  margin: 0 auto;
+  &-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 33.33%;
+  }
+  &-fruits {
+    border-radius: 15px;
+    border: #000000 solid 1px;
+    padding: 20px 15px;
+    img {
+      max-width: 250px;
+    }
+  }
+  &-descr {
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
